@@ -1,3 +1,7 @@
+
+use ng_tree::NgTree;
+pub mod ng_tree;
+
 fn main() {
-    println!("Hello, world!");
+    let tree = NgTree::from();
 }
