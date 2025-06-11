@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "ng-di-analyzer"
+name = "analyzer"
 version = "0.1.0"
