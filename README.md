@@ -8,6 +8,10 @@
   🧠 Rust-powered static analysis tool to detect <code>NullInjectorError</code> issues in Angular apps at compile-time.
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/status-work%20in%20progress-orange?style=for-the-badge" alt="Work in Progress Badge" />
+</p>
+
 ---
 
 ## What is `ng-di-analyzer`?
