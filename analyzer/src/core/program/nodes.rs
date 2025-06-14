@@ -1,40 +1,33 @@
 
 pub enum NodeType {
-    Component(NodeMetadata),
-    Directive(NodeMetadata),
-    Pipe(NodeMetadata),
-    Service(NodeMetadata),
-    NgModule(NodeMetadata),
-    Routes(NodeMetadata),
-    InjectionToken(NodeMetadata),
+    Component(Node),
+    Directive(Node),
+    Pipe(Node),
+    Service(Node),
+    NgModule(Node),
+    Routes(Node),
+    InjectionToken(Node),
 }
 
-pub struct NodeMetadata {
+pub struct RootNode {
+    pub children: Vec<NodeDependency>
+}
+
+pub struct NodeDependency {
   pub identifier: String,
-  pub children: Vec<NodeType>,
+  pub children: Vec<NodeDependency>,
 }
 
-pub struct Program {
-    pub nodes: Vec<NodeType>,
+pub struct Node {
+  pub injections: Vec<String>, // TODO: define Injection type
+  pub file_path: String,
+  pub providers: Option<Vec<String>>, // TODO: define Provider type
+  pub viewProviders: Option<Vec<String>>,  
 }
 
-impl Program {
-    pub fn new() -> Self {
-        Program { nodes: Vec::new() }
-    }
-
-    pub fn add_node(&mut self, node: NodeType) {
-        self.nodes.push(node);
-    }
-
-    pub fn get_nodes(&self) -> &Vec<NodeType> {
-        &self.nodes
-    }
-}
-
-impl NodeMetadata {
+impl NodeDependency {
     pub fn new(identifier: String) -> Self {
-        NodeMetadata {
+        NodeDependency {
             identifier,
             children: Vec::new(),
         }
