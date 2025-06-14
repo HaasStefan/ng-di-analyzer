@@ -1,7 +1,11 @@
 
-use ng_tree::NgTree;
-pub mod ng_tree;
+use analyzer::core::parser::file;
 
 fn main() {
-    let tree = NgTree::parse("../angular-workspace/projects/app/src/main.ts");
+    let path = String::from("../angular-workspace/projects/app/src/main.ts");
+    let parsed_file = file::parse(&path) 
+        .expect("Failed to parse file");
+
+    println!("Parsed file: {:?}", parsed_file.content);
+
 }
