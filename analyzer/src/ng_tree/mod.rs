@@ -11,6 +11,8 @@ pub struct NgTree {
     // todo
 }
 
+// Throw away this code. Just keeping it for reference right now.
+
 impl NgTree {
     pub fn parse(main_ts_path: &str) -> NgTree {
         let source_path = Path::new(main_ts_path);

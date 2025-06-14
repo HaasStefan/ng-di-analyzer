@@ -14,3 +14,15 @@ pub fn parse(path: &str) -> io::Result<ParsedFile> {
         content: content,
     })
 }
+
+
+// ast might be a different type
+// pub fn get_import_declarations(ast: &oxc::ast::ast::Program) -> Vec<oxc::ast::ast::ImportDeclaration> {
+    // ast.body.iter().filter_map(|node| {
+    //     if let oxc::ast::ast::Node::ImportDeclaration(import_decl) = node {
+    //         Some(import_decl.clone())
+    //     } else {
+    //         None
+    //     }
+    // }).collect()
+// }
